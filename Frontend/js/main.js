@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
 
       nav.appendChild(logoutBtn);
-      // ------------------------------------------------------
+      
 
     } else {
       // Not logged in
