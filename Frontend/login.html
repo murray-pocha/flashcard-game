@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – Kids Word Game</title>
+
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Kids Word Game</h1>
+
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/leaderboard">Leaderboard</a>
+      <a href="/login">Login</a>
+      <a href="/signup">Sign Up</a>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <h2>Login</h2>
+    <p>Log in to save your scores under your username.</p>
+
+    <form action="/login" method="POST" class="auth-form">
+      <div class="form-row">
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+
+      <div class="form-row">
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password" required />
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <form action="/logout" method="POST" style="margin-top:1rem;">
+      <button type="submit">Logout</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built by Murray & Jack · HTML/CSS/JS · PostgreSQL</p>
+  </footer>
+  <script src="./js/main.js"></script>
+</body>
+</html>

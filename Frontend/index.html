@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kids Word Game</title>
+
+  <!-- Main styles for layout / colors -->
+  <link rel="stylesheet" href="./css/styles.css" />
+  <!-- Optional: game-specific styling -->
+  <link rel="stylesheet" href="./css/game.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Kids Word Game</h1>
+
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/leaderboard">Leaderboard</a>
+      <a href="/login">Login</a>
+      <a href="/signup">Sign Up</a>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <!-- Landing page intro -->
+    <section class="intro">
+      <h2>Welcome!</h2>
+      <p>
+        Practice words with a fun flash-card game. Choose a difficulty and see how many you can get right!
+      </p>
+    </section>
+
+    <!-- Game box: this is where the flash-card game will live -->
+    <section class="game-section">
+      <div id="game-box" class="game-box">
+        <h2 class="game-title">Flash Card Game</h2>
+
+        <div class="difficulty-select">
+          <label for="difficulty">Choose difficulty:</label>
+          <select id="difficulty">
+            <option value="easy">Easy (ages 3+)</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <div class="card" id="card">
+          <!-- Show the main word here -->
+          <p class="card-word" id="card-word">Press "Start Game" to begin!</p>
+        </div>
+
+        <!-- Multiple-choice answers will go here -->
+        <div id="answer-options" class="answers"></div>
+
+        <!-- Feedback like "Correct!" / "Try again" -->
+        <p id="feedback" class="feedback"></p>
+
+        <div class="game-controls">
+          <button id="start-game">Start Game</button>
+          <button id="next-card" disabled>Next Card</button>
+        </div>
+
+        <div class="score-display">
+          <p>Correct: <span id="score-correct">0</span> / <span id="score-total">0</span></p>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <p>Built by Murray & Jack · HTML/CSS/JS · PostgreSQL</p>
+      </footer>
+
+      <!-- Game logic will be added here later -->
+      <script src="./js/game.js"></script>
+        <script src="./js/main.js"></script>
+</body>
+
+</html>

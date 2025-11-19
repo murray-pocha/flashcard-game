@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaderboard – Kids Word Game</title>
+
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/game.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Kids Word Game</h1>
+
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/leaderboard">Leaderboard</a>
+      <a href="/login">Login</a>
+      <a href="/signup">Sign Up</a>
+    </nav>
+  </header>
+
+  <main class="page-content leaderboard-page">
+    <h2>Leaderboard</h2>
+    <p>Top scores from all players. Logged-in users will see their username, others appear as "Anonymous".</p>
+
+    <div class="leaderboard-controls">
+      <label for="leaderboard-difficulty">Filter by difficulty:</label>
+      <select id="leaderboard-difficulty">
+        <option value="all">All</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Player</th>
+          <th>Score</th>
+          <th>Difficulty</th>
+          <th>When</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard-body">
+        <!-- Rows will be filled by leaderboard.js -->
+      </tbody>
+    </table>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built by Murray & Jack · HTML/CSS/JS · PostgreSQL</p>
+  </footer>
+
+  <script src="./js/leaderboard.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

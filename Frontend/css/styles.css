@@ -1,0 +1,117 @@
+/* ===== Global layout & typography ===== */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f4ff;  /* very light purple */
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header {
+  background-color: #6a4de8;  /* purple header */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.page-content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.intro {
+  margin-bottom: 1.5rem;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #eee;
+  font-size: 0.9rem;
+}
+
+/* ===== Leaderboard styles ===== */
+
+.leaderboard-page h2 {
+  margin-bottom: 0.5rem;
+}
+
+.leaderboard-controls {
+  margin: 1rem 0;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid #eee;
+}
+
+.leaderboard-table th {
+  background-color: #f0e8ff;
+  text-align: left;
+}
+
+/* ===== Auth forms ===== */
+
+.auth-form {
+  max-width: 400px;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.8rem;
+}
+
+.form-row label {
+  margin-bottom: 0.3rem;
+}
+
+.form-row input {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.auth-form button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #6a4de8;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}

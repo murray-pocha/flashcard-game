@@ -1,0 +1,109 @@
+/* ===== Game box styling ===== */
+
+.game-section {
+  display: flex;
+  justify-content: center;
+}
+
+.game-box {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  max-width: 500px;
+  width: 100%;
+}
+
+.game-title {
+  margin-top: 0;
+  text-align: center;
+}
+
+.difficulty-select {
+  margin-bottom: 1rem;
+}
+
+.card {
+  border: 2px solid #6a4de8;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-word {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+}
+
+.card-definition {
+  margin: 0;
+  font-style: italic;
+  color: #555;
+}
+
+.game-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.game-controls button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #6a4de8;
+  color: white;
+  font-weight: bold;
+}
+
+.game-controls button:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+.score-display {
+  font-weight: bold;
+  text-align: right;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.answers button {
+  width: 100%;
+  text-align: left;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f7f3ff;
+  cursor: pointer;
+}
+
+.answers button:hover {
+  background-color: #e3d8ff;
+}
+
+.answers button.correct {
+  background-color: #c5f7c5;
+  border-color: #4caf50;
+}
+
+.answers button.incorrect {
+  background-color: #ffd6d6;
+  border-color: #f44336;
+}
+
+.feedback {
+  min-height: 1.2rem;
+  font-weight: bold;
+}
