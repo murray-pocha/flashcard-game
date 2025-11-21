@@ -22,57 +22,39 @@
 /* Custom Difficulty Select Box */
 .difficulty-select {
     position: relative;
-    display: inline-block;
-    width: 150px; 
-    font-family: Arial, sans-serif;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .difficulty-select select {
-    appearance: none; /* Removes default browser styling */
-    -webkit-appearance: none; /* For Safari */
-    -moz-appearance: none; /* For Firefox */
-    width: 100%;
-    padding: 10px 30px 10px 10px; /* Adjust padding for the arrow */
-    border: 1px solid #030303;
-    border-radius: 4px;
-    background-color: #ec5f5f; /* Background color */
-    font-size: 16px;
-    cursor: pointer;
-    /* Image from Dreamstime.com */
-    background-image: url("https://thumbs.dreamstime.com/b/watermelon-slice-background-seed-skin-texture-90866993.jpg");
-    background-size: contain;
-    color: #040803;
+  appearance: none; /* Removes default browser styling */
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
+  background-image: url("https://thumbs.dreamstime.com/b/watermelon-slice-background-seed-skin-texture-90866993.jpg"); /* Image from Dreamstime.com */
+  background-size: contain;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid #078007;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #57f764;
 }
 
-/* Style the options */
 .difficulty-select select option {
-    font-size: 16px;
-    padding: 5px;
-}
-
-/* Add an arrow icon (using a pseudo-element) */
-.difficulty-select::after {
-    content: '\25BC'; /* Down arrow character */
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none; /* So the arrow doesn't interfere with the select */
-    color: #1cad17;
+  padding: 10px;
+  background-color: #ec5f5f;
+  color: #333;
 }
 
 /* Hover effect */
 .difficulty-select select:hover {
-    border-color: #085a13;
+  border-color: #1fcc13;
 }
 
 /* Focus effect */
 .difficulty-select select:focus {
-    outline: none; /* Remove default focus outline */
-    border-color: #030303;
-    box-shadow: 0 0 0 2px rgba(18, 19, 19, 0.25);
+  outline: none; /* Remove default focus outline */
+  border-color: #030303; /* Or your preferred focus color */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.341); /* Optional: Add a subtle box-shadow */
 }
 
 .card {
