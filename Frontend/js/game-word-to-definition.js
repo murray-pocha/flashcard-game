@@ -120,17 +120,17 @@ function sendScoreToBackend() {
     body: JSON.stringify({
       correctAnswers: scoreCorrect,
       totalQuestions: MAX_QUESTIONS,
-      difficulty: currentDifficulty
+      difficulty: currentDifficulty,
+      mode: 'word_to_definition'   // ⬅️ IMPORTANT
     })
   })
     .then(res => res.json())
     .then(data => {
-      console.log('Score saved:', data);
-      // Optional: nudge player to view leaderboard
+      console.log('Score saved (Game 1):', data);
       feedbackEl.textContent += ' Your score has been saved to the leaderboard!';
     })
     .catch(err => {
-      console.error('Error saving score:', err);
+      console.error('Error saving score (Game 1):', err);
       feedbackEl.textContent += ' (Could not save score.)';
     });
 }

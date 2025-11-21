@@ -71,6 +71,21 @@
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.341); 
 }
 
+.difficulty-select select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid #6a4de8;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #57f764;
+}
+
+.difficulty-select select option {
+  padding: 10px;
+  background-color: hsl(216, 69%, 50%);
+  color: #333;
+}
+
 .card {
   border: 2px solid #6a4de8;
   border-radius: 10px;

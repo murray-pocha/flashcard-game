@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS scores (
   correct_answers INTEGER NOT NULL,                       -- how many answers were correct
   total_questions INTEGER NOT NULL,                       -- total number asked (probably 10)
   difficulty TEXT NOT NULL CHECK (difficulty IN           -- difficulty category for the round:
-    ('easy', 'medium', 'hard')),                          
+    ('easy', 'medium', 'hard')),     
+  mode TEXT NOT NULL DEFAULT 'word_to_definition',                     
   created_at TIMESTAMP DEFAULT NOW()                      -- timestamp recorded
 );

@@ -129,7 +129,7 @@ app.post("/logout", (req, res) => {
 });
 
 // Who is currently logged in? (for frontend + debugging)
-app.get('/api/me', (req, res) => {
+app.get("/api/me", (req, res) => {
   if (req.session && req.session.userId) {
     return res.json({
       loggedIn: true,
@@ -171,17 +171,27 @@ app.get("/api/words", async (req, res) => {
 
 // Save a score when a round of 10 questions is finished
 app.post("/api/scores", async (req, res) => {
-  const { correctAnswers, totalQuestions, difficulty } = req.body;
+  const { correctAnswers, totalQuestions, difficulty, mode } = req.body;
 
-  // If user is logged in, use their id; otherwise null (Anonymous)
+  // Default mode (old game)
+  const gameMode = mode || "word_to_definition";
+
+  // Logged-in user or null (Anonymous)
   const userId = req.session && req.session.userId ? req.session.userId : null;
 
-  console.log("Saving score for userId:", userId, "difficulty:", difficulty);
+  console.log("Saving score:", {
+    userId,
+    difficulty,
+    correctAnswers,
+    totalQuestions,
+    mode: gameMode,
+  });
 
   try {
     await db.query(
-      "INSERT INTO scores (user_id, correct_answers, total_questions, difficulty) VALUES ($1, $2, $3, $4)",
-      [userId, correctAnswers, totalQuestions, difficulty]
+      `INSERT INTO scores (user_id, correct_answers, total_questions, difficulty, mode)
+       VALUES ($1, $2, $3, $4, $5)`,
+      [userId, correctAnswers, totalQuestions, difficulty, gameMode]
     );
 
     res.status(201).json({ message: "Score saved" });
@@ -193,48 +203,46 @@ app.post("/api/scores", async (req, res) => {
 
 // Get leaderboard scores (optionally filtered by difficulty)
 app.get("/api/leaderboard", async (req, res) => {
-  const { difficulty } = req.query; // e.g. 'easy', 'medium', 'hard', or undefined
-
+  const { difficulty, mode } = req.query; // e.g. 'easy', 'medium', 'hard', or undefined
+  console.log("Leaderboard request query:", req.query);
   try {
-    let result;
+    let query = `
+      SELECT
+        scores.id,
+        COALESCE(users.username, 'Anonymous') AS username,
+        scores.correct_answers,
+        scores.total_questions,
+        scores.difficulty,
+        scores.mode,
+        scores.created_at
+      FROM scores
+      LEFT JOIN users ON scores.user_id = users.id
+    `;
+
+    const conditions = [];
+    const params = [];
 
     if (difficulty) {
-      // Leaderboard for a single difficulty
-      result = await db.query(
-        `
-        SELECT
-          scores.id,
-          COALESCE(users.username, 'Anonymous') AS username,
-          scores.correct_answers,
-          scores.total_questions,
-          scores.difficulty,
-          scores.created_at
-        FROM scores
-        LEFT JOIN users ON scores.user_id = users.id
-        WHERE scores.difficulty = $1
-        ORDER BY scores.correct_answers DESC, scores.created_at ASC
-        LIMIT 10;
-        `,
-        [difficulty]
-      );
-    } else {
-      // Overall leaderboard (all difficulties)
-      result = await db.query(
-        `
-        SELECT
-          scores.id,
-          COALESCE(users.username, 'Anonymous') AS username,
-          scores.correct_answers,
-          scores.total_questions,
-          scores.difficulty,
-          scores.created_at
-        FROM scores
-        LEFT JOIN users ON scores.user_id = users.id
-        ORDER BY scores.correct_answers DESC, scores.created_at ASC
-        LIMIT 10;
-        `
-      );
+      params.push(difficulty);
+      conditions.push(`scores.difficulty = $${params.length}`);
     }
+
+    if (mode) {
+      params.push(mode);
+      conditions.push(`scores.mode = $${params.length}`);
+    }
+
+    if (conditions.length > 0) {
+      query += ` WHERE ` + conditions.join(" AND ");
+    }
+
+    query += `
+      ORDER BY scores.correct_answers DESC, scores.created_at ASC
+      LIMIT 10;
+    `;
+
+    const result = await db.query(query, params);
+    console.log("Leaderboard rows returned:", result.rows.length);
 
     res.json(result.rows);
   } catch (err) {
