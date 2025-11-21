@@ -1,11 +1,11 @@
 /* ===== Global layout & typography ===== */
 
 body {
-  font-family: 'Comic Relief', sans-serif;
-  background-color: #f9f4ff;  /* very light purple */
-  color: #333;
-  margin: 0;
-  padding: 0;
+  background-image: url('../images/flashcard-game-background-image.jpg');
+  background-size: cover;          /* Make it fill the screen */
+  background-repeat: no-repeat;    /* No repeating tiles */
+  background-position: center;     /* Center the image */
+  background-attachment: fixed;    /* Parallax effect */
 }
 
 .comic-relief-regular {
