@@ -1,5 +1,17 @@
 /* ===== Game box styling ===== */
 
+.comic-relief-regular {
+  font-family: "Comic Relief", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.comic-relief-bold {
+  font-family: "Comic Relief", system-ui;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .game-section {
   display: flex;
   justify-content: center;
@@ -17,6 +29,7 @@
 .game-title {
   margin-top: 0;
   text-align: center;
+  font-family: 'Comic Relief', sans-serif;
 }
 
 .difficulty-select {
