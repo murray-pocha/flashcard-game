@@ -15,6 +15,7 @@
 .game-section {
   display: flex;
   justify-content: center;
+  gap: 100px;
 }
 
 .game-box {
@@ -24,6 +25,12 @@
   padding: 25px;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
   margin: 20px 0; /* space from the top/bottom of wrapper */
+
+  width: 450px;        
+  min-height: 450px;   /* same height for both */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
 }
 
 .game-title {

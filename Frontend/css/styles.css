@@ -1,6 +1,15 @@
 /* ===== Global layout & typography ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
   background-image: url('../images/flashcard-game-background-image.jpg');
   background-size: cover;          /* Make it fill the screen */
   background-repeat: no-repeat;    /* No repeating tiles */
@@ -21,7 +30,7 @@ body {
 }
 
 .site-header {
-  background-color: #6a4de8;  /* purple header */
+  background-color: #870ceb;  /* purple header */
   color: white;
   padding: 1rem 2rem;
   display: flex;
@@ -56,10 +65,16 @@ body {
 }
 
 .site-footer {
+  width: 100%;
   text-align: center;
-  padding: 1rem;
-  background-color: #eee;
+  padding: 1rem 2rem;
+  background: rgba(0, 255, 255, 0.25); /* light teal, 25% opacity */
+  color: #003333;                     /* dark teal text for contrast */
+  font-weight: bold;
   font-size: 0.9rem;
+  backdrop-filter: blur(6px);         /* optional frosted glass look */
+  border-top: 2px solid rgba(0, 128, 128, 0.4);
+  margin-top: auto;
 }
 
 /* ===== Leaderboard styles ===== */
