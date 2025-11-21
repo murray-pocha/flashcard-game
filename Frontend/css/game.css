@@ -18,12 +18,12 @@
 }
 
 .game-box {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  max-width: 500px;
-  width: 100%;
+   background: rgba(255, 253, 230, 0.95); /* soft yellow */
+  border: 4px solid #ff9800;            /* orange */
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  margin: 20px 0; /* space from the top/bottom of wrapper */
 }
 
 .game-title {
