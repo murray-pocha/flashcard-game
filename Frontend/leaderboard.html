@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leaderboard – Kids Word Game</title>
+  <title>Leaderboard · Kids Wonderful Word Game</title>
 
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/game.css" />
 </head>
+
 <body>
   <header class="site-header">
-    <h1>Kids Word Game</h1>
+    <h1>Kids Wonderful Word Game</h1>
 
     <nav class="main-nav">
       <a href="/">Home</a>
@@ -20,41 +22,71 @@
     </nav>
   </header>
 
-  <main class="page-content leaderboard-page">
-    <h2>Leaderboard</h2>
-    <p>Top scores from all players. Logged-in users will see their username, others appear as "Anonymous".</p>
+  <main class="page-content">
+    <section class="intro">
+      <h2>Leaderboard</h2>
+      <p>
+        Top scores from all players. Logged-in users will see their username,
+        others appear as "Anonymous".
+      </p>
 
-    <div class="leaderboard-controls">
-      <label for="leaderboard-difficulty">Filter by difficulty:</label>
-      <select id="leaderboard-difficulty">
-        <option value="all">All</option>
+      <label for="difficulty-filter">Filter by difficulty:</label>
+      <select id="difficulty-filter">
+        <option value="">All</option>
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
       </select>
-    </div>
+    </section>
 
-    <table class="leaderboard-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Player</th>
-          <th>Score</th>
-          <th>Difficulty</th>
-          <th>When</th>
-        </tr>
-      </thead>
-      <tbody id="leaderboard-body">
-        <!-- Rows will be filled by leaderboard.js -->
-      </tbody>
-    </table>
+    <!-- Two leaderboards side by side -->
+    <section class="leaderboards-wrapper">
+      <!-- WORD -> DEFINITION -->
+      <div class="leaderboard-box">
+        <h3>Word → Definition</h3>
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Player</th>
+              <th>Score</th>
+              <th>Difficulty</th>
+              <th>When</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-word-body">
+            <!-- rows filled by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- DEFINITION -> WORD -->
+      <div class="leaderboard-box">
+        <h3>Definition → Word</h3>
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Player</th>
+              <th>Score</th>
+              <th>Difficulty</th>
+              <th>When</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-def-body">
+            <!-- rows filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p>Built by Murray & Jack · HTML/CSS/JS · PostgreSQL</p>
+    <p>Built by Murray &amp; Jack · HTML/CSS/JS · PostgreSQL</p>
   </footer>
 
   <script src="./js/leaderboard.js"></script>
-    <script src="./js/main.js"></script>
+  <script src="./js/main.js"></script>
 </body>
+
 </html>
