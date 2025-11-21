@@ -19,12 +19,12 @@
   text-align: center;
 }
 
-/* Custom Difficulty Select Box */
 .difficulty-select {
     position: relative;
     margin-bottom: 1rem;
 }
 
+/* Select customization */
 .difficulty-select select {
   appearance: none; /* Removes default browser styling */
   -webkit-appearance: none; /* For Safari */
@@ -39,6 +39,7 @@
   background-color: #57f764;
 }
 
+/* Select option customization */
 .difficulty-select select option {
   padding: 10px;
   background-color: #ec5f5f;
@@ -53,8 +54,8 @@
 /* Focus effect */
 .difficulty-select select:focus {
   outline: none; /* Remove default focus outline */
-  border-color: #030303; /* Or your preferred focus color */
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.341); /* Optional: Add a subtle box-shadow */
+  border-color: #030303;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.341); 
 }
 
 .card {
