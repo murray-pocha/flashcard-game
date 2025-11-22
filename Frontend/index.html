@@ -30,7 +30,12 @@
   </header>
 
   <main class="page-content">
-    <!-- Background balloons behind content -->
+    <section class="intro">
+      <h2>Welcome!</h2>
+      <p>Choose a category to begin your adventure.</p>
+    </section>
+
+        <!-- Background balloons behind content -->
     <div class="bg-balloons">
       <div class="balloon bg-balloon-1"></div>
       <div class="balloon bg-balloon-2"></div>
@@ -38,87 +43,38 @@
       <div class="balloon bg-balloon-4"></div>
       <div class="balloon bg-balloon-5"></div>
     </div>
-    <!-- Landing page intro -->
-    <section class="intro-box">
-      <h2 class="intro-title">Welcome!</h2>
-      <p>
-        Practice words with a fun flash-card game. Choose a difficulty and see how many you can get right!
-      </p>
+
+    <section class="game-category-grid">
+
+      <!-- WORD GAMES button -->
+      <a class="game-category-card" href="/word-games">
+        <h3>Word Games</h3>
+        <p>Match words, definitions, and more!</p>
+      </a>
+
+      <!-- ADDITIONAL BUTTONS (not functional yet) -->
+      <a class="game-category-card" href="#">
+        <h3>Math Games</h3>
+        <p>Coming soon!</p>
+      </a>
+
+      <a class="game-category-card" href="#">
+        <h3>Ninja Game</h3>
+        <p>Coming soon!</p>
+      </a>
+
+      <a class="game-category-card" href="#">
+        <h3>ABC's</h3>
+        <p>Coming soon!</p>
+      </a>
+
+      <a class="game-category-card" href="#">
+        <h3>Ball Game</h3>
+        <p>Coming soon!</p>
+      </a>
 
     </section>
 
-    <!-- Game box: this is where the flash-card games will live -->
-    <section class="game-section">
-      <!-- Game 1: Word -> Definition -->
-      <div id="game-box" class="game-box">
-        <h2 class="game-title">Word → Definition</h2>
-
-        <div class="difficulty-select">
-          <label for="difficulty">Choose difficulty:</label>
-          <select id="difficulty">
-            <option value="easy">Easy (ages 3+)</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
-        </div>
-
-        <div class="card" id="card">
-          <!-- Show the main word here -->
-          <p class="card-word" id="card-word">Press "Start Game" to begin!</p>
-        </div>
-
-        <!-- Multiple-choice answers will go here -->
-        <div id="answer-options" class="answers"></div>
-
-        <!-- Feedback like "Correct!" / "Try again" -->
-        <p id="feedback" class="feedback"></p>
-
-        <div class="game-controls">
-          <button id="start-game">Start Game</button>
-          <button id="next-card" disabled>Next Card</button>
-        </div>
-
-        <div class="score-display">
-          <p>Correct: <span id="score-correct">0</span> / <span id="score-total">0</span></p>
-        </div>
-      </div>
-
-      <!-- Game 2: Definition -> Word -->
-      <div id="game-box-2" class="game-box">
-        <h2 class="game-title">Definition → Word</h2>
-
-        <div class="difficulty-select">
-          <label for="difficulty-2">Choose difficulty:</label>
-          <select id="difficulty-2">
-            <option value="easy">Easy (ages 3+)</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
-        </div>
-
-        <div class="card" id="card-2">
-          <!-- Show the definition here -->
-          <p class="card-word" id="card-definition">Press "Start Game 2" to begin!</p>
-        </div>
-
-        <!-- Multiple-choice word answers will go here -->
-        <div id="answer-word-options" class="answers"></div>
-
-        <!-- Feedback like "Correct!" / "Try again" -->
-        <p id="feedback-2" class="feedback"></p>
-
-        <div class="game-controls">
-          <button id="start-game-2">Start Game 2</button>
-          <button id="next-card-2" disabled>Next Card</button>
-        </div>
-
-        <div class="score-display">
-          <p>Correct: <span id="score-correct-2">0</span> / <span id="score-total-2">0</span></p>
-        </div>
-      </div>
-
-
-    </section>
   </main>
 
   <footer class="site-footer">

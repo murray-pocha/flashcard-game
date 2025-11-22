@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Word Games · Kids Wonderful Word Game</title>
+
+  <!-- Same CSS as your other pages -->
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/game.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Kids Wonderful Word Game</h1>
+
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/leaderboard">Leaderboard</a>
+      <a href="/login">Login</a>
+      <a href="/signup">Sign Up</a>
+    </nav>
+  </header>
+
+  <main class="page-content">
+
+    <!-- Landing page intro -->
+    <section class="intro-box">
+      <h6 class="intro-title">
+        Practice words with a fun Multiple-choice game. Choose a difficulty and see how many you can get right!
+      </h6>
+
+    </section>
+
+    <!-- Game box: this is where the flash-card games will live -->
+    <section class="game-section">
+      <!-- Game 1: Word -> Definition -->
+      <div id="game-box" class="game-box">
+        <h2 class="game-title">Word → Definition</h2>
+
+        <div class="difficulty-select">
+          <label for="difficulty">Choose difficulty:</label>
+          <select id="difficulty">
+            <option value="easy">Easy (ages 3+)</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <div class="card" id="card">
+          <!-- Show the main word here -->
+          <p class="card-word" id="card-word">Press "Start Game" to begin!</p>
+        </div>
+
+        <!-- Multiple-choice answers will go here -->
+        <div id="answer-options" class="answers"></div>
+
+        <!-- Feedback like "Correct!" / "Try again" -->
+        <p id="feedback" class="feedback"></p>
+
+        <div class="game-controls">
+          <button id="start-game">Start Game</button>
+          <button id="next-card" disabled>Next Card</button>
+        </div>
+
+        <div class="score-display">
+          <p>Correct: <span id="score-correct">0</span> / <span id="score-total">0</span></p>
+        </div>
+      </div>
+
+      <!-- Game 2: Definition -> Word -->
+      <div id="game-box-2" class="game-box">
+        <h2 class="game-title">Definition → Word</h2>
+
+        <div class="difficulty-select">
+          <label for="difficulty-2">Choose difficulty:</label>
+          <select id="difficulty-2">
+            <option value="easy">Easy (ages 3+)</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <div class="card" id="card-2">
+          <!-- Show the definition here -->
+          <p class="card-word" id="card-definition">Press "Start Game 2" to begin!</p>
+        </div>
+
+        <!-- Multiple-choice word answers will go here -->
+        <div id="answer-word-options" class="answers"></div>
+
+        <!-- Feedback like "Correct!" / "Try again" -->
+        <p id="feedback-2" class="feedback"></p>
+
+        <div class="game-controls">
+          <button id="start-game-2">Start Game 2</button>
+          <button id="next-card-2" disabled>Next Card</button>
+        </div>
+
+        <div class="score-display">
+          <p>Correct: <span id="score-correct-2">0</span> / <span id="score-total-2">0</span></p>
+        </div>
+      </div>
+
+
+    </section>
+  </main>
+
+  <script src="./js/game.js"></script>
+  <!-- any other scripts you already use on the word game screen -->
+</body>
+</html>
