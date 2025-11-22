@@ -31,7 +31,7 @@ body {
 }
 
 .site-header {
-  background: linear-gradient(90deg, #7b16ff, #b53bff); /* fun purple gradient */
+  background: linear-gradient(90deg, #7b16ff, #b53bff); /* purple gradient */
   color: white;
   padding: 0.8rem 2.5rem;
   display: flex;
@@ -49,7 +49,6 @@ body {
   margin: 0;
   font-size: 1.9rem;
   letter-spacing: 0.03em;
-  
   
     /*  Always-on glow */
   text-shadow:
@@ -82,7 +81,6 @@ body {
   padding: 0 1rem;
   position: relative; /* bg-balloons can be positioned inside */
 }
-
 
 
 /* Basic balloon shape used for all background balloons */
@@ -246,7 +244,72 @@ body {
   line-height: 1.4;
 }
 
-/* Dropdown styling (matches game difficulty dropdown) */
+/* ===== Confetti layer ===== */
+
+.confetti-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Base confetti piece */
+.confetti {
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  border-radius: 3px;
+  opacity: 0.9;
+
+  /* ONE place to control speed now */
+  animation: confettiFall 5s linear infinite;
+}
+
+/* ===== 14 confetti pieces ===== */
+
+/* Original group */
+.confetti-1  { left: 12%; top: -10%; background: linear-gradient(135deg,#ff7ac4,#ffd76b);  animation-delay: -0s; }
+.confetti-2  { left: 30%; top: -15%; background: linear-gradient(135deg,#6bf7ff,#8d7bff);  animation-delay: -1.2s; }
+.confetti-3  { left: 48%; top: -12%; background: linear-gradient(135deg,#ffda6b,#ff8ba0);  animation-delay: -2s; }
+.confetti-4  { left: 65%; top: -18%; background: linear-gradient(135deg,#9dff7b,#57f764);  animation-delay: -0.8s; }
+.confetti-5  { left: 78%; top: -10%; background: linear-gradient(135deg,#ffd76b,#ff7ac4); animation-delay: -1.8s; }
+.confetti-6  { left: 22%; top: -20%; background: linear-gradient(135deg,#8d7bff,#6bf7ff);  animation-delay: -2.6s; }
+.confetti-7  { left: 55%; top: -22%; background: linear-gradient(135deg,#ff8ba0,#ffda6b);  animation-delay: -3.3s; }
+.confetti-8  { left: 5%;  top: -18%; background: linear-gradient(135deg,#6bf7ff,#ffd76b);  animation-delay: -0.5s; }
+.confetti-9  { left: 18%; top: -25%; background: linear-gradient(135deg,#ff8ba0,#8d7bff);  animation-delay: -2.1s; }
+.confetti-10 { left: 42%; top: -17%; background: linear-gradient(135deg,#ffd76b,#6bf7ff);  animation-delay: -0.9s; }
+.confetti-11 { left: 60%; top: -27%; background: linear-gradient(135deg,#9dff7b,#ffda6b);  animation-delay: -1.6s; }
+.confetti-12 { left: 72%; top: -14%; background: linear-gradient(135deg,#ff7ac4,#6bf7ff);  animation-delay: -3.1s; }
+.confetti-13 { left: 85%; top: -30%; background: linear-gradient(135deg,#8d7bff,#ffd76b);  animation-delay: -2.9s; }
+.confetti-14 { left: 35%; top: -28%; background: linear-gradient(135deg,#ffda6b,#ff7ac4);  animation-delay: -1.2s; }
+
+@keyframes confettiFall {
+  /* start above the screen, invisible */
+  0% {
+    transform: translateY(-20vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  /* fade in near the top */
+  10% {
+    opacity: 1;
+  }
+
+  /* fall all the way down */
+  90% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 1;
+  }
+
+  /* just after leaving the screen, fade out */
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+/* Dropdown styling  */
 #difficulty-filter {
   padding: 6px 10px;
   border-radius: 8px;
@@ -284,7 +347,7 @@ body {
   font-size: 1.5rem;
 }
 
-/* The actual table inside the fancy box */
+/* The actual table inside the box */
 .leaderboard-table {
   width: 100%;
   border-collapse: collapse;
@@ -360,7 +423,5 @@ textarea {
 }
 
 input[type="submit"] {
-font-family: 'Comic Relief', sans-serif;
+  font-family: 'Comic Relief', sans-serif;
 }
-
-/* jack adjust all CSS */
