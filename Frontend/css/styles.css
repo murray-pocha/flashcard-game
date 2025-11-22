@@ -75,6 +75,7 @@ body {
   text-shadow: 0 3px 8px rgba(255, 255, 255, 0.6); /* glow effect */
 }
 
+
 .page-content {
   max-width: 900px;
   margin: 2rem auto;
@@ -180,8 +181,24 @@ body {
 }
 
 
-.intro {
-  margin-bottom: 1.5rem;
+
+.intro-box {
+  background: rgba(255, 253, 230, 0.95); /* same soft yellow */
+  border: 4px solid #ff9800;             /* same orange border */
+  border-radius: 16px;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 850px;                      /* wider than game boxes */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.intro-title {
+  margin-top: 0;
+  font-size: 1.8rem;
+  text-shadow:
+    0 0 3px rgba(255, 255, 255, 0.6),
+    0 0 6px rgba(255, 255, 255, 0.4);
 }
 
 .site-footer {
