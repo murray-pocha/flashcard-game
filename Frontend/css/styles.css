@@ -31,18 +31,31 @@ body {
 }
 
 .site-header {
-  background-color: #870ceb;  /* purple header */
+  background: linear-gradient(90deg, #7b16ff, #b53bff); /* fun purple gradient */
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid #5a0e98;
+  box-shadow:   
+  0 4px 12px rgba(0, 0, 0, 0.35),
+  0 6px 20px rgba(0, 0, 0, 0.22);
+  position: relative;
+  z-index: 10;
+
 }
 
 .site-header h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
+  letter-spacing: 0.03em;
+  
+  
+    /*  Always-on glow */
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.55),
+    0 0 12px rgba(255, 255, 255, 0.35),
+    0 0 20px rgba(255, 255, 255, 0.25);
 }
 
 .main-nav a {
@@ -50,17 +63,126 @@ body {
   text-decoration: none;
   margin-left: 1rem;
   font-weight: bold;
+  display: inline-block;      /* needed so transform works */
+  transition: 
+    transform 0.25s ease,
+    color 0.25s ease,
+    text-shadow 0.25s ease;
 }
 
 .main-nav a:hover {
-  text-decoration: underline;
+  transform: translateY(-3px) scale(1.12);     /* float + pop */
+  color: #ffe7ff;                              /* slightly brighter purple-white */
+  text-shadow: 0 3px 8px rgba(255, 255, 255, 0.6); /* glow effect */
 }
 
 .page-content {
   max-width: 900px;
   margin: 2rem auto;
   padding: 0 1rem;
+  position: relative; /* bg-balloons can be positioned inside */
 }
+
+
+
+/* Basic balloon shape used for all background balloons */
+.balloon {
+  position: absolute;
+  width: 70px;
+  height: 90px;
+  border-radius: 50% 50% 45% 45%;
+  pointer-events: none;
+  background: radial-gradient(circle at 30% 30%, #ffffffaa, #ff6bd6);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Background balloons behind the games */
+.bg-balloons {
+  position: absolute;
+  inset: 0;              /* fill the main content area */
+  pointer-events: none;  /* never block clicks */
+  z-index: 0;            /* behind main content */
+  overflow: visible;
+}
+
+/* 5 background balloons that float AROUND the game area */
+
+/* 5 background balloons that float AROUND the game area with a gentle rotation */
+
+/* Left side – vertical float */
+.bg-balloon-1 {
+  left: -50px;           /* just outside left edge */
+  top: 15%;
+  animation: floatUpDown1 10s ease-in-out infinite alternate;
+}
+
+/* Right side – vertical float */
+.bg-balloon-2 {
+  right: -50px;          /* just outside right edge */
+  top: 30%;
+  background: radial-gradient(circle at 30% 30%, #ffffffaa, #6bf7ff);
+  animation: floatUpDown2 12s ease-in-out infinite alternate;
+}
+
+/* Top – horizontal float */
+.bg-balloon-3 {
+  top: -70px;            /* above the intro/game boxes */
+  left: 20%;
+  background: radial-gradient(circle at 30% 30%, #ffffffaa, #ffda6b);
+  animation: floatSide1 14s ease-in-out infinite alternate;
+}
+
+/* Bottom – horizontal float */
+.bg-balloon-4 {
+  bottom: -70px;         /* below the game boxes */
+  left: 55%;
+  background: radial-gradient(circle at 30% 30%, #ffffffaa, #ff8ba0);
+  animation: floatSide2 16s ease-in-out infinite alternate;
+}
+
+/* Diagonal around edge on the right */
+.bg-balloon-5 {
+  top: 20%;
+  right: -40px;
+  background: radial-gradient(circle at 30% 30%, #ffffffaa, #9dff7b);
+  animation: floatDiag 18s ease-in-out infinite alternate;
+}
+
+/* Up/down floats for the side balloons, with rotation */
+@keyframes floatUpDown1 {
+  0%   { transform: translateY(-30px) rotate(-10deg); }
+  50%  { transform: translateY(30px)  rotate(12deg); }
+  100% { transform: translateY(-30px) rotate(-10deg); }
+}
+
+@keyframes floatUpDown2 {
+  0%   { transform: translateY(25px)  rotate(8deg); }
+  50%  { transform: translateY(-25px) rotate(-14deg); }
+  100% { transform: translateY(25px)  rotate(8deg); }
+}
+
+/* Side-to-side floats for top/bottom balloons, with rotation */
+@keyframes floatSide1 {
+  0%   { transform: translateX(0)    rotate(-12deg); }
+  50%  { transform: translateX(80px) rotate(10deg); }
+  100% { transform: translateX(0)    rotate(-12deg); }
+}
+
+@keyframes floatSide2 {
+  0%   { transform: translateX(0)     rotate(10deg); }
+  50%  { transform: translateX(-90px) rotate(-12deg); }
+  100% { transform: translateX(0)     rotate(10deg); }
+}
+
+/* Diagonal float around the edge, with rotation */
+@keyframes floatDiag {
+  0%   { transform: translate(0, 0)        rotate(-10deg); }
+  25%  { transform: translate(-20px, -20px) rotate(8deg); }
+  50%  { transform: translate(-40px, 10px)  rotate(14deg); }
+  75%  { transform: translate(-20px, 30px)  rotate(-8deg); }
+  100% { transform: translate(0, 0)        rotate(-10deg); }
+}
+
 
 .intro {
   margin-bottom: 1.5rem;
