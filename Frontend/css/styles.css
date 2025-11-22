@@ -109,7 +109,7 @@ body {
 .bg-balloon-1 {
   left: -50px;           /* just outside left edge */
   top: 15%;
-  animation: floatUpDown1 10s ease-in-out infinite alternate;
+  animation: floatUpDown1 6s ease-in-out infinite alternate;
 }
 
 /* Right side – vertical float */
@@ -117,7 +117,7 @@ body {
   right: -50px;          /* just outside right edge */
   top: 30%;
   background: radial-gradient(circle at 30% 30%, #ffffffaa, #6bf7ff);
-  animation: floatUpDown2 12s ease-in-out infinite alternate;
+  animation: floatUpDown2 7s ease-in-out infinite alternate;
 }
 
 /* Top – horizontal float */
@@ -125,7 +125,7 @@ body {
   top: -70px;            /* above the intro/game boxes */
   left: 20%;
   background: radial-gradient(circle at 30% 30%, #ffffffaa, #ffda6b);
-  animation: floatSide1 14s ease-in-out infinite alternate;
+  animation: floatSide1 8s ease-in-out infinite alternate;
 }
 
 /* Bottom – horizontal float */
@@ -133,7 +133,7 @@ body {
   bottom: -70px;         /* below the game boxes */
   left: 55%;
   background: radial-gradient(circle at 30% 30%, #ffffffaa, #ff8ba0);
-  animation: floatSide2 16s ease-in-out infinite alternate;
+  animation: floatSide2 9s ease-in-out infinite alternate;
 }
 
 /* Diagonal around edge on the right */
@@ -141,7 +141,7 @@ body {
   top: 20%;
   right: -40px;
   background: radial-gradient(circle at 30% 30%, #ffffffaa, #9dff7b);
-  animation: floatDiag 18s ease-in-out infinite alternate;
+  animation: floatDiag 10s ease-in-out infinite alternate;
 }
 
 /* Up/down floats for the side balloons, with rotation */
