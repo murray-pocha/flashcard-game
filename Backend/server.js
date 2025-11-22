@@ -44,6 +44,11 @@ app.get("/signup", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "Frontend", "signup.html"));
 });
 
+// Word Games category page
+app.get("/word-games", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "Frontend", "word-games.html"));
+});
+
 // ---------- AUTH ROUTES ---------- //
 
 // Handle sign up form submission
