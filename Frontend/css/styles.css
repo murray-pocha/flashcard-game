@@ -387,12 +387,20 @@ body {
 
 /* Dropdown styling  */
 #difficulty-filter {
+  font-family: 'Comic Relief', sans-serif;
+  color: #1c1c1c;
+  appearance: none; /* Removes default browser styling */
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
   padding: 6px 10px;
   border-radius: 8px;
-  border: 2px solid #6a4de8;
-  background-color: #57f764;
+  border: 2px solid #1fcc13;
+  background-color: #ec5f5f;
+   background-image: url("https://thumbs.dreamstime.com/b/watermelon-slice-background-seed-skin-texture-90866993.jpg"); /* Image from Dreamstime.com */
+  background-size: contain;
   font-size: 1rem;
   cursor: pointer;
+  outline: none; /* Remove default focus outline */
 }
 
 /* Layout for the two leaderboards */
