@@ -42,6 +42,7 @@
 .difficulty-select {
     position: relative;
     margin-bottom: 1rem;
+    border-color: #1fcc13;
 }
 
 /* Select customization */
@@ -57,13 +58,13 @@
   border: 2px solid #1fcc13;
   font-size: 1rem;
   cursor: pointer;
-  background-color: #57f764;
 }
 
 /* Select option customization */
 .difficulty-select select option {
   padding: 10px;
   background-color: #ec5f5f;
+  border: 1px solid #1fcc13;
   color: #333;
 }
 
@@ -71,13 +72,6 @@
 .difficulty-select select:focus {
   outline: none; /* Remove default focus outline */
   border-color: #1fcc13;
-  box-shadow: 0 0 0 2px #ec5f5f; 
-}
-
-.difficulty-select select option {
-  padding: 10px;
-  background-color: hsl(216, 69%, 50%);
-  color: #333;
 }
 
 .card {
