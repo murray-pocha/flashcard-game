@@ -119,10 +119,13 @@ body {
   background-color: #fffbe8;
   border: 4px solid orange;
   border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
 
   font-family: 'Comic Relief', sans-serif;
   text-align: center;
+
+  transform-origin: center center;
+  /* we only animate via keyframes now */
 }
 
 .game-category-card h3 {
@@ -130,12 +133,30 @@ body {
 }
 
 .game-category-card:hover {
-  transform: translateY(-6px) rotate(360deg);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  transition: 2.5s ease;
-  animation: shake 0.5s ease-out 2.3s;
+  animation: overshootSpin 2.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
+@keyframes overshootSpin {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  /* main spin + overshoot */
+  60% {
+    transform: translateY(-6px) rotate(380deg);
+  }
+
+  /* come back slightly "under" straight (still same direction) */
+  80% {
+    transform: translateY(-3px) rotate(352deg);  /*(looks like under-shoot) */
+  }
+
+  /* final settle */
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
 
 .page-content {
   max-width: 900px;
