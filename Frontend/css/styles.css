@@ -130,8 +130,10 @@ body {
 }
 
 .game-category-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) rotate(360deg);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: 2.5s ease;
+  animation: shake 0.5s ease-out 2.3s;
 }
 
 
@@ -202,6 +204,15 @@ body {
   right: -40px;
   background: radial-gradient(circle at 30% 30%, #ffffffaa, #9dff7b);
   animation: floatDiag 10s ease-in-out infinite alternate;
+}
+
+/* Shake animation for the game-catagory-hover */
+@keyframes shake {
+    0% { transform: translateY(0) rotate(8deg); }
+    25% { transform: translateX(-5px) rotate(-2.5deg); }
+    50% { transform: translateX(5px) rotate(2deg); }
+    75% { transform: translateX(-5px) rotate(-1.5deg); }
+    100% { transform: translateX(0) rotate(1deg); }
 }
 
 /* Up/down floats for the side balloons, with rotation */
