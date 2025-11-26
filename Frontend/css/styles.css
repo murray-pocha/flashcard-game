@@ -75,27 +75,64 @@ body {
   text-shadow: 0 3px 8px rgba(255, 255, 255, 0.6); /* glow effect */
 }
 
-.intro-box {
-  max-width: 550px;
-  margin: 1rem auto;
-  padding: 0.8rem 1rem;
+/* ===== Plane Flight Banner ===== */
 
-  background: rgba(255, 255, 255, 0.75);
-  border: 2px solid orange;
-  border-radius: 12px;
+.plane-container {
+  width: max-content;       /* container hugs plane + banner width */
+  margin: 0.75rem auto 1.5rem;  /* center horizontally, space above/below */
+  
+}
 
-  text-align: center;
+.plane-img {
+  width: 200px;             /* plane size – adjust up/down if needed */
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;               /* plane in front */
+}
+
+/* banner trailing behind the plane */
+
+.banner {
+  position: absolute;
+  right: 200px;
+  top: 40px;
+
+  padding: 0.6rem 1.4rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid orange;
+  border-radius: 999px;
   font-family: 'Comic Relief', sans-serif;
+  font-size: 1.05rem;
+  white-space: nowrap;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 
-  /* smaller shadow */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+
+  /* THIS is what makes it behave like a flag */
+  transform-origin: 0% 50%;
 }
 
-.intro-title {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: normal;
+/* Track area the plane flies across */
+.plane-strip {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
+
+/* The plane + banner as one moving unit */
+.plane-container {
+  position: absolute;
+  top: 20px;          /* vertical position under the purple bar */
+  left: -320px;       /* start just off the left side */
+  width: max-content; /* size to its contents (plane + banner) */
+}
+
+
+
 
 .game-category-grid {
   display: flex;
